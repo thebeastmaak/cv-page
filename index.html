@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title id="page-title">Digital CV</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="avatar" id="avatar"></div>
+    <div>
+      <h1 id="name">Your Name</h1>
+      <p id="headline">Role / Tagline</p>
+      <ul class="meta" id="meta-links"></ul>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Core Competencies</h2>
+      <ul class="chips" id="competencies"></ul>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <ul class="chips" id="skills"></ul>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div id="experience"></div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <ul id="education"></ul>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <ul id="projects"></ul>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <ul class="chips" id="languages"></ul>
+    </section>
+  </main>
+
+  <!-- Chatbot placeholder (you’ll wire this up later) -->
+  <aside id="chatbot">
+    <!-- drop-in widget or iframe later -->
+  </aside>
+
+  <footer>
+    <small>© <span id="year"></span> <span id="name-footer"></span></small>
+  </footer>
+
+  <script>
+    // CHANGE THIS to your username and repo:
+    const DATA_URL = "https://YOUR-USERNAME.github.io/cv-data-form/profile.json";
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
