@@ -3,64 +3,54 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title id="page-title">Digital CV</title>
+  <title>Digital CV</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hero">
     <div class="avatar" id="avatar"></div>
     <div>
-      <h1 id="name">Your Name</h1>
-      <p id="headline">Role / Tagline</p>
-      <ul class="meta" id="meta-links"></ul>
+      <h1 id="name">Loading…</h1>
+      <p id="headline"></p>
+      <ul class="meta" id="meta"></ul>
     </div>
   </header>
 
   <main>
     <section>
       <h2>Core Competencies</h2>
-      <ul class="chips" id="competencies"></ul>
+      <ul class="chips" id="core"></ul>
     </section>
-
     <section>
       <h2>Technical Skills</h2>
       <ul class="chips" id="skills"></ul>
     </section>
-
     <section>
       <h2>Experience</h2>
-      <div id="experience"></div>
+      <div id="exp"></div>
     </section>
-
     <section>
       <h2>Education</h2>
-      <ul id="education"></ul>
+      <ul id="edu"></ul>
     </section>
-
     <section>
       <h2>Projects</h2>
       <ul id="projects"></ul>
     </section>
-
     <section>
       <h2>Languages</h2>
-      <ul class="chips" id="languages"></ul>
+      <ul class="chips" id="langs"></ul>
     </section>
   </main>
 
-  <!-- Chatbot placeholder (you’ll wire this up later) -->
-  <aside id="chatbot">
-    <!-- drop-in widget or iframe later -->
-  </aside>
-
   <footer>
-    <small>© <span id="year"></span> <span id="name-footer"></span></small>
+    <small>© <span id="year"></span> <span id="nameFooter"></span></small>
   </footer>
 
   <script>
-    // CHANGE THIS to your username and repo:
-    const DATA_URL = "https://thebeastmaak.github.io/cv-data-from/profile.json";
+    // SET THIS to your deployed API (no trailing slash)
+    window.API_BASE = "https://cv-api.onrender.com";
   </script>
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
