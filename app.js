@@ -33,10 +33,23 @@
       `<div class="notice">${msg}. Check the name in the URL.</div>`);
   }
 
-  function chips(id, arr=[]) {
-    const el = document.getElementById(id);
-    arr.forEach(x => { const li = document.createElement("li"); li.textContent = x; el.appendChild(li); });
-  }
+  function chips(id, arr = []) {
+  const el = document.getElementById(id);
+  arr.forEach(x => {
+    const li = document.createElement("li");
+    if (typeof x === "string") {
+      li.textContent = x;
+    } else if (x && typeof x === "object") {
+      if (x.name) {
+        li.textContent = x.level ? `${x.name} (${x.level})` : x.name;
+      } else {
+        li.textContent = JSON.stringify(x);
+      }
+    }
+    el.appendChild(li);
+  });
+}
+
 
   function render(d) {
     document.title = `${d.name} — Digital CV`;
