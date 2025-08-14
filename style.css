@@ -51,6 +51,15 @@ h2 {
   padding: .3rem .6rem;
   border-radius: 20px;
   transition: background 0.2s;
+  
+.meta li {
+  display: flex;
+  align-items: center;
+}
+.meta i {
+  margin-right: 6px;
+}
+  
 }
 .meta a:hover {
   background: rgba(255,255,255,0.4);
