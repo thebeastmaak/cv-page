@@ -1,16 +1,160 @@
 * { box-sizing: border-box; }
-body { margin: 0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial; color:#0e1116; }
-.hero { display:flex; gap:1rem; align-items:center; padding:2rem 1.25rem; background:#f6f8fa; border-bottom:1px solid #eaeef2;}
-.avatar { width:80px; height:80px; border-radius:50%; background:#dde3ea; background-size:cover; background-position:center; }
-h1 { margin:0 0 .25rem; }
-h2 { margin:2rem 0 .5rem; font-size:1.25rem; }
-.meta { display:flex; gap:.75rem; list-style:none; padding:0; margin:.25rem 0 0; }
-.meta a { text-decoration:none; color:#0969da; }
-main { max-width:900px; margin:0 auto; padding:1rem 1.25rem 3rem; }
-.chips { display:flex; flex-wrap:wrap; gap:.5rem; list-style:none; padding:0; margin:0; }
-.chips li { padding:.35rem .6rem; border:1px solid #eaeef2; border-radius:999px; background:#fff; }
-.job { border-left:3px solid #eaeef2; padding:.5rem 0 .5rem 1rem; margin:.5rem 0; }
-.job h3 { margin:.1rem 0; font-size:1.05rem; }
-.job .org { color:#57606a; }
-#edu, #projects { padding-left:1rem; }
-.notice { padding:1rem; background:#fff3cd; border:1px solid #ffe69c; border-radius:8px; margin:1rem 1.25rem; }
+body {
+  margin: 0;
+  font: 16px/1.6 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color: #222;
+  background: #fafafa;
+}
+
+/* Header / Hero */
+.hero {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 2rem 1.25rem;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: white;
+  border-bottom: none;
+}
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #fff2;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid white;
+}
+h1 {
+  margin: 0 0 .25rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+h2 {
+  margin: 2rem 0 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ff6b6b;
+}
+.meta {
+  display: flex;
+  gap: .75rem;
+  list-style: none;
+  padding: 0;
+  margin: .25rem 0 0;
+  flex-wrap: wrap;
+}
+.meta a {
+  text-decoration: none;
+  color: white;
+  background: rgba(255,255,255,0.2);
+  padding: .3rem .6rem;
+  border-radius: 20px;
+  transition: background 0.2s;
+}
+.meta a:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+/* Layout */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 3rem;
+}
+
+/* Chips */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.chips li {
+  padding: .4rem .8rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: white;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+.chips li:hover {
+  transform: translateY(-2px);
+}
+
+/* Experience */
+.job {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-left: 5px solid #ff6b6b;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.job:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.job h3 {
+  margin: .1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.job .org {
+  color: #666;
+}
+.job ul {
+  margin: .5rem 0 0 1rem;
+}
+
+/* Education & Projects */
+#edu li, #projects li {
+  background: white;
+  margin: .5rem 0;
+  padding: .6rem .8rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+#projects li a {
+  color: #ff6b6b;
+  font-weight: 600;
+  text-decoration: none;
+}
+#projects li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #fff;
+  border-top: 1px solid #eee;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Notice message */
+.notice {
+  padding: 1rem;
+  background: #fff3cd;
+  border: 1px solid #ffe69c;
+  border-radius: 8px;
+  margin: 1rem 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .meta {
+    justify-content: center;
+  }
+}
