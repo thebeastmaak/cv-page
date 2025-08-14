@@ -121,16 +121,26 @@
       });
     if (d.location) links.push({ label: d.location });
     (d.links || []).forEach((l) => links.push(l));
+
+    // Add icons based on link type
     links.forEach((l) => {
       const li = document.createElement("li");
+
+      let iconClass = "fa-link"; // default
+      if (l.href && l.href.startsWith("mailto:")) iconClass = "fa-envelope";
+      else if (l.href && l.href.startsWith("tel:")) iconClass = "fa-phone";
+      else if (l.href && /linkedin/i.test(l.href)) iconClass = "fa-linkedin";
+      else if (l.href && /github/i.test(l.href)) iconClass = "fa-github";
+      else if (l.href && /twitter/i.test(l.href)) iconClass = "fa-twitter";
+
       if (l.href) {
         const a = document.createElement("a");
         a.href = l.href;
         a.target = "_blank";
-        a.textContent = l.label;
+        a.innerHTML = `<i class="fa-solid ${iconClass}"></i> ${l.label}`;
         li.appendChild(a);
       } else {
-        li.textContent = l.label;
+        li.innerHTML = `<i class="fa-solid ${iconClass}"></i> ${l.label}`;
       }
       meta.appendChild(li);
     });
